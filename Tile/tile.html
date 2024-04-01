@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="tile.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+
+<div class="container">
+  <div class="tile__collection"></div>
+
+</div>
+
+</body>
+</html>
+
+<script>
+
+// <---------- FUTURE LOGIC BUILDING IF NEEDED ------>
+
+// To simulate multiple actions in an array, you can convert actionType to an array eg:
+// actionType: ['action', 'action', 'new', 'update'].
+// then you can filter the array using array.exists() to always display the
+// 'action' type if there are multiple.
+
+// Here is an example of that
+// This checks if type action exists in the array and returns it, if not it returns
+// the first element of the array
+const arrayActions = ['new', 'action', 'update']
+const returnActionType = (array) => {
+  const pillLabel = array.includes('action') ? 'action' : array[0]
+  return pillLabel
+}
+
+//Test it out in the logs :)
+// console.log(returnActionType(arrayActions))
+
+// Back in the object below, it would now look like this
+// {
+//     title: 'My Applications',
+//     iconUrl: './applications.svg',
+//     actionCount: "4",
+//     actionType: arrayActions, <----------- now the array of actions
+//     totalCount: "12",
+//     link: '/view-all-applications-link'
+//   },
+
+// When implemented in the map function, it would then look like this:
+// <p class="pill__content">${item.actionCount} ${parseStatusMessage(returnActionType(arrayActions), item.actionCount)}</p>
+
+
+// The determination of the pill colour would also change to this
+// const pillColour = returnActionType(item.actionType) === 'action' ? '-action' : '-status'
+
+//<------- END OF FUTURE LOGIC -------->
+
+const dummyTileData = [
+  {
+    title: 'My Applications',
+    iconUrl: './applications.svg',
+    actionCount: "4",
+    actionType: 'action',
+    totalCount: "12",
+    link: '/view-all-applications-link'
+  },
+  {
+    title: 'My programs',
+    iconUrl: './programs.svg',
+    actionCount: "2",
+    actionType: 'new',
+    totalCount: "2",
+    link: '/view-all-programs-link'
+  },
+  {
+    title: 'My enquirires',
+    iconUrl: './enquiries.svg',
+    actionCount: "1",
+    actionType: 'update',
+    totalCount: "1",
+    link: '/view-all-enquiries-link'
+  },
+]
+
+  const tileCollection = document.getElementsByClassName('tile__collection')[0]
+
+   const parseStatusMessage = (messageType, messageCount) => {
+      switch(messageType){
+        case 'action':
+          return messageCount > 1 ? 'Actions required' : 'Action required';
+
+        case 'new':
+          return messageCount > 1 ? 'New programs' : 'New program'
+
+        case 'update':
+          return messageCount > 1 ? 'Status updates' : 'Status update'
+      }
+    }
+
+    dummyTileData.map((item) => {
+
+      const pillColour = item.actionType === 'action' ? '-action' : '-status'
+      const tileContainer = document.createElement('div');
+      tileContainer.className = 'tile__container';
+      tileContainer.innerHTML = `
+      <div class="action__container">
+        <img class="tile__icon" src="${item.iconUrl}"" />
+        <div class="action__pill ${pillColour} ${item.actionCount > 0 ? '' : '-hide'}">
+          <p class="pill__content">${item.actionCount} ${parseStatusMessage(item.actionType, item.actionCount)}</p>
+        </div>
+      </div>
+      <div class="title_link__container">
+        <div class="title__container">
+          <p class="tile__title">${item.title}</p>
+          <p class="tile__count">${item.totalCount}</p>
+        </div>
+        <a class="tile__link" href=${item.link}>View all</a>
+        </div>
+    `
+
+      const pillContainer = document.getElementsByClassName('action__pill')[0]
+      tileCollection.appendChild(tileContainer);
+    })
+
+</script>
+
+

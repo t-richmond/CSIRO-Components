@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="header.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+  <div class="container">
+    <div class="header__container">
+      <div class="header__content__container">
+        <div class="header__breadcrumb">
+          <h1 class="homepage__welcome"></h1>
+          <h1 class="breadcrumb"></h1>
+          <a href="#" class="mobile__back">
+            <img src="./back.svg">
+            <p>Back</p>
+          </a>
+        </div>
+        <h2 class="header__title"></h2>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  /* Determine whether the user is on the home page or not, to show either the welcome or page breadcrumb*/
+  const name = 'John Doe';
+  const rootUrl = 'file:///Users/trichmond/Library/CloudStorage/OneDrive-Deloitte(O365D)/Desktop/CSIRO%20Components/Header/header.html/contact'
+  const pageTitle = 'CSIRO Education and Outreach Portal'
+  const title = document.getElementsByClassName('header__title')[0]
+  const breadcrumb = document.getElementsByClassName('breadcrumb')[0]
+  const welcome = document.getElementsByClassName('homepage__welcome')[0];
+  const goBack = document.getElementsByClassName('mobile__back')[0]
+  title.innerHTML = pageTitle
+
+  const handleViewPortChange = () => {
+    if(window.innerWidth < 768 && window.location.href !== rootUrl){
+      goBack.style.display = 'flex'
+      breadcrumb.style.display = 'none'
+    }else{
+      goBack.style.display = 'none'
+      breadcrumb.style.display = 'flex'
+    }
+  }
+
+  const handleWelcomeTitle = () => {
+    if(window.location.href === rootUrl){
+      welcome.innerHTML = `Welcome ${name},`
+      welcome.style.display = 'flex'
+    }else{
+      //* Replace with actual breadcrumb component
+      breadcrumb.innerHTML = 'Home / Contact Us'
+      breadcrumb.style.display = 'flex'
+    }
+  }
+
+  const handleLinkClick = () => {
+    event.preventDefault();
+      window.history.back();
+  }
+
+  handleWelcomeTitle()
+  handleViewPortChange()
+  window.addEventListener('resize', handleViewPortChange)
+  goBack.addEventListener('click', handleLinkClick)
+
+</script>

@@ -1,0 +1,66 @@
+.header__container {
+  width: auto;
+  height: 174px;
+  background-color: #001d34;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #fff;
+}
+
+.homepage__welcome,
+.breadcrumb,
+.mobile__back {
+  display: none;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin: 0;
+}
+
+.mobile__back {
+  gap: 8px;
+  justify-content: start;
+  align-items: center;
+  color: #fff;
+
+  p {
+    margin: 0;
+  }
+}
+
+.header__title {
+  font-family: "Montserrat";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin: 0;
+}
+
+.header__content__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 24px;
+  margin: 0;
+  padding: 32px 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .header__container {
+    height: 180px;
+  }
+
+  .header__title {
+    font-size: 32px;
+  }
+
+  .header__content__container {
+    margin-left: 96px;
+    padding: 48px 0;
+  }
+}

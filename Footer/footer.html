@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="footer.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+
+<div class="container">
+  <div class="footer__container">
+    <div class="footer__links__container">
+      <div class="footer__title">
+        <h2 class="footer__heading">Education and Outreach Portal</h2>
+        <div class="sharer__container">
+          <a target="_blank" href="https://www.facebook.com/CSIROnews/">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.5717 24.1216V14.9011H18.6823L19.1447 11.291H15.5717V8.99149C15.5717 7.94974 15.8619 7.23649 17.357 7.23649H19.2515V4.01786C18.3302 3.91886 17.4032 3.87161 16.4762 3.87499C13.7267 3.87499 11.8389 5.55349 11.8389 8.63486V11.2842H8.74854V14.8944H11.8457V24.1216H15.5717Z" fill="white"/>
+              </svg>
+          </a>
+          <a  target= "_blank" href="mailto:education@csiro.au">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M21.875 5H6.12498C4.26777 5 2.76092 6.50012 2.75004 8.35478C2.74985 8.3663 2.74983 8.37781 2.74998 8.38932V19.625C2.74998 21.489 4.26102 23 6.12498 23H21.875C23.7389 23 25.25 21.489 25.25 19.625V8.39144C25.2502 8.37837 25.2502 8.36529 25.2499 8.3522C25.2376 6.49873 23.7313 5 21.875 5ZM22.8739 7.85693C22.6865 7.49632 22.3095 7.25 21.875 7.25H6.125C5.6905 7.25 5.31354 7.49632 5.12612 7.85693L14 13.7716L22.8739 7.85693ZM5 10.4771V19.625C5 20.2463 5.50368 20.75 6.125 20.75H21.875C22.4963 20.75 23 20.2463 23 19.625V10.4771L14.624 16.0611C14.2881 16.285 13.8618 16.3099 13.5058 16.1357L13.376 16.0611L5 10.4771Z" fill="white"/>
+              </svg>
+          </a>
+        </div>
+      </div>
+      <div class="divider -horizontal"></div>
+      <div class="program__explorer">
+        <h4 class="footer__subheading">Explore our programs</h4>
+        <div class="cardLink__container">
+        </div>
+      </div>
+      <div class="policy__explorer">
+        <h4 class="footer__subheading">Information and policies</h4>
+        <div class="policy__links__container">
+          <div class="policy__links">
+
+          </div>
+          <p class="safety__text">We are committed to child safety and to the implementation of <a class="safety__link" href="https://www.csiro.au/en/about/Policies/Child-Safe-Policy">Child Safe principles and procedures.</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="acknowledgement__country">
+      <p class="acknowledgement__text">CSIRO acknowledges the Traditional Owners of the land, sea and waters, of the area that we live and work on across Australia. We acknowledge their continuing connection to their culture and pay our respects to their Elders past and present. View our <a class="acknowledgement__link" href="https://www.csiro.au/en/about/Indigenous-Science-and-Engagement-Program/Reconciliation-Action-Plan">vision towards reconciliation</a>.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+<script>
+
+const dummyLinkArray = [
+    {
+      link: '/students',
+      value: 'For students'
+    },
+    {
+      link: '/educators',
+      value: 'For educators'
+    },
+    {
+      link: '/stem-professionals',
+      value: 'For STEM Professionals'
+    },
+    {
+      link: '/all-programs',
+      value: 'All programs'
+    },
+  ]
+
+  const dummyInfoLinks = [
+    {
+      link: '/access',
+      value: 'Access to information'
+    },
+    {
+      link: '/accessibility',
+      value: 'Accessibility'
+    },
+    {
+      link: '/copyright',
+      value: 'Copyright'
+    },
+    {
+      link: '/legal-notice',
+      value: 'Legal notice and disclaimer'
+    },
+    {
+      link: '/legal-notice',
+      value: 'Legal notice and disclaimer'
+    },
+    {
+      link: '/policy-guidelines',
+      value: 'Policy and guidelines'
+    },
+    {
+      link: '/privacy',
+      value: 'Your privacy'
+    },
+  ]
+
+  const linkSvg = `<svg class="link__icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.75 18L15.75 12L9.75 6" stroke="#004B87" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`
+
+  dummyLinkArray.map((item) => {
+    const cardLinkElement = document.createElement('a');
+    cardLinkElement.className = 'card__link'
+    cardLinkElement.href = item.link
+    cardLinkElement.innerHTML = `<div class='card__link__text'><p class="card__label">${item.value}</p>${linkSvg}</div>`
+    document.getElementsByClassName('cardLink__container')[0].appendChild(cardLinkElement)
+  })
+
+  dummyInfoLinks.map((item) => {
+    const infoLinkElement = document.createElement('a');
+    const dividerElement = document.createElement('div');
+    infoLinkElement.className = 'info__link';
+    dividerElement.className = 'divider -vertical'
+    infoLinkElement.href = item.link;
+    infoLinkElement.innerHTML = item.value;
+    document.getElementsByClassName('policy__links')[0].appendChild(infoLinkElement)
+    document.getElementsByClassName('policy__links')[0].appendChild(dividerElement)
+  })
+
+</script>
+
+

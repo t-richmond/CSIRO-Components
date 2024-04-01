@@ -1,0 +1,119 @@
+.navigation__container {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  max-height: 96px;
+  /* padding: 22px 96px; */
+  padding: 22px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px 0px rgba(13, 14, 15, 0.12),
+    0px 1px 2px 0px rgba(13, 14, 15, 0.08);
+}
+
+.logo__container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .logo__title {
+    font-family: "Open Sans";
+    font-size: 14px;
+
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    color: #757679;
+  }
+}
+
+.link__container {
+  display: flex;
+  gap: 64px;
+
+  .link__content {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .util__content {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+    svg {
+      &:hover {
+        color: #001d34;
+      }
+    }
+  }
+}
+
+.navigation__link {
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  color: #004b87;
+  text-decoration: none;
+
+  &:hover {
+    color: #001d34;
+  }
+
+  &.-active {
+    padding-bottom: 4px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    width: fit-content;
+    border-color: #004b87;
+    top: 3px;
+    position: relative;
+
+    &:hover {
+      border-color: #001d34;
+    }
+  }
+}
+
+svg:hover path {
+  fill: #001d34;
+}
+
+.signIn__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    font-size: 16px;
+  }
+}
+
+.menu__button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+
+  :hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .navigation__container {
+    padding: 22px 96px;
+  }
+
+  .logo__container > .logo__title {
+    font-size: 16px;
+  }
+
+  .signIn__content a {
+    font-size: 18px;
+  }
+}

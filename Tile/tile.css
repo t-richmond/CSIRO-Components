@@ -1,0 +1,138 @@
+.tile__collection {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+
+.tile__container {
+  box-shadow: 0px 1px 2px 0px rgba(13, 14, 15, 0.08),
+    0px 4px 8px 0px rgba(13, 14, 15, 0.12);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  flex: 1;
+  gap: 24px;
+  position: relative;
+}
+
+.action__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pill__content {
+  margin: 0;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.tile__title {
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.tile__count {
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.tile__icon {
+  width: 32px;
+  height: 32px;
+}
+
+.title_link__container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.action__pill {
+  border-radius: 100px;
+  background-color: transparent;
+  padding: 8px 24px;
+
+  &.-action {
+    background-color: #9c0f2e1a;
+  }
+
+  &.-status {
+    background-color: #007a531a;
+  }
+
+  &.-hide {
+    display: none;
+  }
+}
+
+.tile__link {
+  color: #004b87;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  text-decoration: none;
+
+  width: fit-content;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .tile__collection {
+    flex-direction: row;
+    gap: 64px;
+  }
+
+  .tile__container {
+    transition: all 0.1s ease-out;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+  }
+
+  .pill__content {
+    font-size: 16px;
+  }
+
+  .tile__title,
+  .tile__count {
+    font-size: 24px;
+  }
+
+  .tile__link {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="card.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+<div class="container">
+  <div class="card__collection">
+    <div class="card__layout">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+<script>
+
+  const dummyCardData = [
+    {
+      image: './imgOne.png',
+      heading: 'CREST',
+      subheading: 'Student',
+      description: 'Creativity in Research, Engineering, Science and Technology (CREST) is a national education program made available by CSIRO for students in Years K to 12, to develop their science, technology, engineering and mathematics (STEM) skills.',
+      link: '/crest'
+    },
+    {
+      image: './imgTwo.png',
+      heading: "Young Indigenous Women's STEM Academy",
+      subheading: 'Student',
+      description: "The Young Indigenous Women's STEM Academy gives young Indigenous women the tools and support they need to succeed in an exciting career in science, technology, engineering and mathematics (STEM).",
+      link: '/stem-academy'
+    },
+    {
+      image: './imgThree.png',
+      heading: 'Digital Careers',
+      subheading: 'Student',
+      description: "CSIRO Digital Careers supports teachers and encourages students' understanding of digital technologies and the foundational skills they require in an ever-changing workforce.",
+      link: '/digital-careers'
+    },
+    {
+      image: './imgThree.png',
+      heading: 'Digital Careers',
+      subheading: 'Student',
+      description: "CSIRO Digital Careers supports teachers and encourages students' understanding of digital technologies and the foundational skills they require in an ever-changing workforce.",
+      link: '/digital-careers'
+    },
+    ]
+
+    const reducedDummyArray = dummyCardData.slice(0,3)
+    reducedDummyArray.map((item) => {
+      const card = document.createElement('div')
+      card.className = 'card__container';
+      card.innerHTML = `
+    <img class="card__image" src="${item.image}"/>
+    <div class="card__content__container">
+      <div class="card__text__container">
+      <div class="card__title">
+        <h4 class="card__heading">${item.heading}</h4>
+        <p class="card__subheading">Role: ${item.subheading}</p>
+      </div>
+      <p class="card__description">${item.description}</p>
+      </div>
+      <a target="_blank" class="card__link" href=${item.link}>View program</a>
+
+    </div>`
+
+    const cardContainer = document.getElementsByClassName('card__layout')[0]
+    cardContainer.appendChild(card)
+    })
+
+    //Update styling for single card layout
+    if(reducedDummyArray.length < 2){
+      const targetElements = document.querySelectorAll('.card__container, .card__content__container, .card__image, .card__link');
+      targetElements.forEach(element => {
+        element.classList.add('-singleCard');
+      });
+    }
+
+    // Render view more link if the array has more than 3 items.
+    if(dummyCardData.length > 3){
+      const cardCollectionDiv = document.getElementsByClassName('card__collection')[0]
+      const viewAllCards = document.createElement('a')
+      viewAllCards.className = 'view__more__programs'
+      viewAllCards.innerHTML = 'View all programs'
+      viewAllCards.href = '/view-more-cards-link'
+      viewAllCards.style.display = 'flex'
+      cardCollectionDiv.appendChild(viewAllCards)
+    }
+</script>
