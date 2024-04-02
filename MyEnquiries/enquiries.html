@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="enquiries.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+
+<div class="container">
+  <div class="enquiries__container">
+    <div class="table__ootb">
+      <h1>Insert OOTB table here</h1>
+    </div>
+    <div class="no__enquiries">
+      <p class="enquiries__text">
+        Welcome to your enquiries dashboard! At the moment, it seems that you haven't made any enquiries yet. If you have any questions about our Education & Outreach Programs, or any other aspect of our portal, please don't hesitate to get in touch.
+      </p>
+      <div class="enquiries__actions">
+        <a href="/contact-us" class="contact__us -primary">
+          Contact us
+        </a>
+        <a  href='/' class="home -secondary">
+          Return to home
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
+
+<script>
+
+  const enquiriesCount = 0;
+  const enquiriesContainer = document.getElementsByClassName('enquiries__container')[0]
+  const ootbTable = document.getElementsByClassName('table__ootb')[0]
+  const noEnquiriesContainer = document.getElementsByClassName('no__enquiries')[0]
+  enquiriesCount < 1 ?  noEnquiriesContainer.style.display = 'flex' : ootbTable.style.display = 'flex'
+
+</script>
+
+
