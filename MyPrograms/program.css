@@ -51,7 +51,6 @@
   width: fit-content;
 
   &:hover {
-    text-decoration: underline;
     color: #001d34;
 
     svg > path {
@@ -62,6 +61,10 @@
   .link__label {
     margin: 0;
     font-size: 16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -87,11 +90,12 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    transition: all 0.5s ease-in;
+    transition: transform 0.5s ease-in;
     text-decoration: none;
 
     &:hover {
       text-decoration: underline;
+      text-decoration-color: #001d34;
 
       p {
         color: #001d34;
