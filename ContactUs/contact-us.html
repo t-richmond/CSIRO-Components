@@ -61,18 +61,16 @@ const formElement = document.getElementsByClassName('ootb__form')[0]
 const submittedElement = document.getElementsByClassName('form__submitted')[0]
 const submissionTextElement = document.getElementsByClassName('submitted__text')[0]
 const formData = {
-  enquiryTitle: 'Dummy title',
-  programName: 'Dummy program name',
-  userEmail: 'test@test.com',
-  userPhone: '0412345678',
+  programName: 'Test Program',
+  userContact: 'preferred@email.com',
   referenceNumber: 'EDU-123456789'
 }
 
 isFormSubmitted ? formElement.style.display = 'none' : submittedElement.style.display = 'none'
-const submissionText = `Thank you for your enquiry about ${formData.enquiryTitle} / ${formData.programName}.
+const submissionText = `Thank you for your enquiry about ${formData.programName}.
 
 We've got your message and we're on it! Expect to hear back from us soon.
-Look out for our reply at ${formData.userEmail} / ${formData.userPhone}.
+Look out for our reply at ${formData.userContact}.
 
 Reference number: ${formData.referenceNumber}`
 
