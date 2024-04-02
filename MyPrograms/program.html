@@ -76,7 +76,9 @@
 
 
 
-      dummyProgramData.resources.map((item) => {
+      dummyProgramData.resources.map((item, index) => {
+
+        const lastItemInList = item === dummyProgramData.resources[dummyProgramData.resources.length - 1]
         const linkListItem = document.createElement('li')
         linkListItem.className = 'list__item'
         const linkListItemValue = document.createElement('a')
@@ -89,7 +91,7 @@
           </svg>`
 
         linkListItem.appendChild(linkListItemValue)
-        linkListItem.appendChild(divider)
+        if(!lastItemInList) linkListItem.appendChild(divider)
         resourcesList.appendChild(linkListItem)
       })
 
