@@ -26,6 +26,7 @@
 
 .program__image {
   object-fit: cover;
+  max-height: 600px;
 }
 
 .program__description {
@@ -76,12 +77,10 @@
     color: #004b87;
     margin: 0;
     font-family: "Open Sans";
-
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 150%;
-    text-decoration-line: underline;
   }
 
   .linkList__item {
@@ -89,8 +88,11 @@
     align-items: center;
     gap: 4px;
     transition: all 0.5s ease-in;
+    text-decoration: none;
 
     &:hover {
+      text-decoration: underline;
+
       p {
         color: #001d34;
       }
@@ -114,7 +116,7 @@
 .resources__heading {
   margin: 0;
   font-family: "Montserrat";
-  font-size: 20px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: 125%;
@@ -161,7 +163,7 @@
   }
 
   .resources__heading {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .resources__links {
