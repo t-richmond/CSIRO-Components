@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="component-wrapper.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+
+  <div class="container">
+    <div class="component__wrapper">
+      <h2 class="component__title"></h2>
+      <h1>Insert component here</h1>
+    </div>
+  </div>
+
+</body>
+</html>
+
+<script>
+  const hasBackground = true
+  const title = 'Insert title here'
+  const componentTitle = document.getElementsByClassName('component__title')[0]
+  const wrapperElement = document.getElementsByClassName('component__wrapper')[0]
+  hasBackground ? wrapperElement.classList.add('-extend') : ''
+  componentTitle.innerHTML = title
+
+</script>
+
+

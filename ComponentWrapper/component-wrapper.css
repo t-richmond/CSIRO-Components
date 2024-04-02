@@ -1,0 +1,28 @@
+.component__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 64px 96px;
+
+  &.-extend {
+    background-color: #f5f5f5;
+    box-shadow: 0 0 0 100vmax #f5f5f5;
+    clip-path: inset(0 -100vmax);
+  }
+}
+
+.component__title {
+  color: #004b87;
+  font-family: "Montserrat";
+  font-size: 28px;
+  font-stylev: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin: 0;
+}
+
+/* Only used to display how it would work in a container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
