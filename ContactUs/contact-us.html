@@ -8,13 +8,77 @@
 <body>
 
 <div class="container">
+
+  <div class="contactUs__container">
+      <div class="ootb__form"><h1>This is the ootb contact us form</h1></div>
+      <div class="form__submitted">
+        <div class="enquiry__submitted">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M33 18.6L21.8625 29.4L16.8 24.4909M42 24C42 33.9411 33.9411 42 24 42C14.0589 42 6 33.9411 6 24C6 14.0589 14.0589 6 24 6C33.9411 6 42 14.0589 42 24Z" stroke="#007A53" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2 class="submitted__heading">Your enquiry has been submitted</h2>
+        </div>
+        <p class="submitted__text">
+
+        </p>
+        <div class="submitted__actions">
+          <a class="home -primary"href="/">Return to home</a>
+          <a class="resubmit__form -secondary" href="/another-enquiry-link">Submit another enquiry</a>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="getInTouch__container">
+        <div class="contact__us">
+          <h3 class="contactUs__heading">
+            Other ways to get in touch
+          </h3>
+          <div class="contact__container">
+            <div class="phone__container">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 3C9.36801 3 9.70266 3.20165 9.87662 3.51875L9.92848 3.62861L11.9285 8.62861C12.0956 9.04635 11.9621 9.51864 11.6145 9.78897L11.5145 9.85749L9.841 10.861L9.90374 10.9637C10.7005 12.2288 11.7712 13.2995 13.0363 14.0963L13.138 14.158L14.1425 12.4855C14.374 12.0997 14.8308 11.9202 15.2563 12.0333L15.3714 12.0715L20.3714 14.0715C20.7131 14.2082 20.9489 14.5197 20.9926 14.8787L21 15V19C21 20.6569 19.6569 22 17.9393 21.9982C9.36247 21.4769 2.52306 14.6375 2 6C2 4.40232 3.24892 3.09634 4.82373 3.00509L5 3H9ZM8.323 5H5C4.44772 5 4 5.44772 3.99816 5.93934C4.45806 13.5072 10.4928 19.5419 18 20C18.5128 20 18.9355 19.614 18.9933 19.1166L19 19V15.677L15.419 14.244L14.3575 16.0145C14.1103 16.4264 13.6096 16.5998 13.167 16.443L13.0577 16.3969C10.6887 15.2285 8.77146 13.3113 7.60314 10.9423C7.39065 10.5115 7.516 9.99665 7.88754 9.7094L7.9855 9.64251L9.755 8.58L8.323 5Z" fill="#111111"/>
+                </svg>
+                <a href="tel:1300136376">1300 136 376</a>
+            </div>
+            <div class="mail__container">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.0001 4H5.00011C3.34965 4 2.01048 5.3328 2.00017 6.98083C1.99997 6.99179 1.99995 7.00273 2.00011 7.01367V17C2.00011 18.6569 3.34325 20 5.00011 20H19.0001C20.657 20 22.0001 18.6569 22.0001 17V7.01366C22.0003 7.00273 22.0002 6.99179 22 6.98085C21.9897 5.33281 20.6506 4 19.0001 4ZM19.888 6.53948C19.7214 6.21894 19.3863 6 19.0001 6H5.00011C4.61389 6 4.27881 6.21894 4.11222 6.53948L12.0001 11.797L19.888 6.53948ZM4.00011 8.86852V17C4.00011 17.5523 4.44782 18 5.00011 18H19.0001C19.5524 18 20.0001 17.5523 20.0001 17V8.86852L12.5548 13.8321C12.2562 14.0311 11.8773 14.0532 11.5609 13.8984L11.4454 13.8321L4.00011 8.86852Z" fill="#111111"/>
+                </svg>
+                <a href="mailto:education@csiro.au">education@csiro.au</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </div>
 </div>
 
 </body>
 </html>
 
 <script>
+const isFormSubmitted = true;
+const formElement = document.getElementsByClassName('ootb__form')[0]
+const submittedElement = document.getElementsByClassName('form__submitted')[0]
+const submissionTextElement = document.getElementsByClassName('submitted__text')[0]
+const formData = {
+  enquiryTitle: 'Dummy title',
+  programName: 'Dummy program name',
+  userEmail: 'test@test.com',
+  userPhone: '0412345678',
+  referenceNumber: 'EDU-123456789'
+}
 
+isFormSubmitted ? formElement.style.display = 'none' : submittedElement.style.display = 'none'
+const submissionText = `Thank you for your enquiry about ${formData.enquiryTitle} / ${formData.programName}.
+
+We've got your message and we're on it! Expect to hear back from us soon.
+Look out for our reply at ${formData.userEmail} / ${formData.userPhone}.
+
+Reference number: ${formData.referenceNumber}`
+
+submissionTextElement.innerHTML = submissionText
+
+console.log(submissionText)
 
 
 </script>

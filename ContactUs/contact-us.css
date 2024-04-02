@@ -1,0 +1,200 @@
+/* To simulate have the containerised components */
+/* .container {
+  max-width: 1250px;
+  margin: auto;
+} */
+
+.contactUs__container {
+  display: flex;
+  flex-direction: column;
+  /* This may be able to be replaced by the ootb container in dynamics */
+  padding: 24px;
+  gap: 48px;
+}
+
+.contact__us {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-shadow: 0px 1px 2px 0px rgba(13, 14, 15, 0.08),
+    0px 4px 8px 0px rgba(13, 14, 15, 0.12);
+  padding: 24px;
+  width: 100%;
+}
+
+.contact__container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contactUs__heading {
+  margin: 0;
+}
+
+.ootb__form {
+  flex: 1;
+}
+
+.getInTouch__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.contactUs__heading {
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  color: #004b87;
+}
+
+.phone__container,
+.mail__container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  a {
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    text-decoration: none;
+    color: #004b87;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.form__submitted {
+  display: flex;
+  flex: 1;
+
+  flex-direction: column;
+  gap: 32px;
+}
+
+.home,
+.resubmit__form {
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #004b87;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  border-radius: 2px;
+  transition: 0.1s all ease-in;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.-primary {
+    color: #fff;
+    background-color: #004b87;
+
+    &:hover {
+      color: #004b87ff;
+      background-color: #fff;
+    }
+  }
+
+  &.-secondary {
+    color: #004b87ff;
+    background-color: #fff;
+
+    &:hover {
+      border-color: #001d34;
+      color: #001d34;
+    }
+  }
+}
+
+.enquiry__submitted {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}
+
+.submitted__heading {
+  color: #111;
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin: 0;
+}
+
+.submitted__text {
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.submitted__actions {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #dadbdc;
+}
+
+@media screen and (min-width: 992px) {
+  .divider {
+    display: none;
+  }
+
+  .contactUs__container {
+    flex-direction: row;
+    gap: 0;
+  }
+  .contact__us {
+    width: 70%;
+  }
+
+  .submitted__actions {
+    flex-direction: row;
+  }
+  .enquiry__submitted {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .contactUs__heading,
+  .submitted__heading {
+    font-size: 28px;
+  }
+
+  .submitted__text {
+    font-size: 18px;
+  }
+
+  .phone__container,
+  .mail__container {
+    a {
+      font-size: 18px;
+    }
+  }
+}
