@@ -53,8 +53,7 @@ a {
     background-color: #004b87;
 
     &:hover {
-      color: #004b87ff;
-      background-color: #fff;
+      background-color: #001d34;
     }
   }
 
