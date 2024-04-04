@@ -11,7 +11,6 @@
 .table > tbody > tr > td {
   border: 1px solid #dadbdc;
   padding: 12px;
-  /* padding: 0; */
   font-size: 16px;
   text-wrap: nowrap;
 
