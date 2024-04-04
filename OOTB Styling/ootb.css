@@ -11,6 +11,7 @@
 .table > tbody > tr > td {
   border: 1px solid #dadbdc;
   padding: 12px;
+  /* padding: 0; */
   font-size: 16px;
   text-wrap: nowrap;
 
@@ -60,6 +61,45 @@
   .table > thead > tr > th,
   .table > thead:first-child > tr:first-child > th {
     padding: 24px 12px;
+  }
+}
+
+/* ------------- Mobile styling -------------   */
+
+@media screen and (max-width: 767px) {
+  .table > tbody > tr > td {
+    padding: 0;
+  }
+
+  .entitylist {
+    border: none !important;
+  }
+
+  .view-grid .table-fluid tbody tr td {
+    padding-left: 12rem !important;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      background-color: #f0f0f0;
+      box-shadow: 0 0 0 2vmax #f0f0f0;
+      clip-path: inset(-100vmax 0);
+      margin-right: 12px;
+      padding: 0 12px;
+      text-wrap: wrap;
+      min-height: 25px;
+      /* If the button import changes the layout height, change min height to a larger px val like below */
+      /* min-height: 51px; */
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .view-grid .table-fluid tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
   }
 }
 
