@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="button.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+
+
+</body>
+</html>
+
+<script>
+  const isLink = true;
+  // Using a string literal for the svg is much easier than importing for colour changes,
+  // if we can import direct that would be awesome, if not we can link it externally.
+  const iconSvg = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M16.986 2.56337C17.0812 2.60281 17.1706 2.66066 17.2487 2.73692C17.254 2.74216 17.2593 2.74747 17.2646 2.75285C17.3395 2.83003 17.3966 2.91815 17.4358 3.01197C17.4652 3.08232 17.4853 3.15757 17.4944 3.23615L17.4944 3.23694C17.4981 3.26895 17.5 3.30113 17.5 3.33332L17.5 3.33333V7.5C17.5 7.96024 17.1269 8.33333 16.6667 8.33333C16.2393 8.33333 15.8871 8.01163 15.8389 7.59718L15.8333 7.5V5.34518L8.92259 12.2559C8.59715 12.5814 8.06951 12.5814 7.74408 12.2559C7.44367 11.9555 7.42057 11.4828 7.67475 11.1559L7.74408 11.0774L14.6548 4.16667H12.5C12.0726 4.16667 11.7204 3.84497 11.6723 3.43052L11.6667 3.33333C11.6667 2.90597 11.9884 2.55374 12.4028 2.50561L12.5 2.5H16.666C16.6679 2.5 16.6698 2.5 16.6717 2.50001C16.7787 2.50065 16.8856 2.52177 16.986 2.56337ZM16.6717 2.50001C16.783 2.50067 16.8891 2.52314 16.986 2.56337L16.6717 2.50001ZM9.16667 5C9.6269 5 10 5.3731 10 5.83333C10 6.2607 9.6783 6.61292 9.26385 6.66106L9.16667 6.66667H5C4.57264 6.66667 4.22041 6.98837 4.17227 7.40282L4.16667 7.5V15C4.16667 15.4274 4.48837 15.7796 4.90282 15.8277L5 15.8333H12.5C12.9274 15.8333 13.2796 15.5116 13.3277 15.0972L13.3333 15V10.8333C13.3333 10.3731 13.7064 10 14.1667 10C14.594 10 14.9463 10.3217 14.9944 10.7361L15 10.8333V15C15 16.3314 13.9592 17.4197 12.6469 17.4958L12.5 17.5H5C3.6686 17.5 2.58028 16.4592 2.50424 15.1469L2.5 15V7.5C2.5 6.1686 3.54077 5.08028 4.85311 5.00424L5 5H9.16667Z" fill="white"/>
+</svg>`
+
+  const buttonData = {
+    variant: 'action',
+    // --------------^ Options: 'primary', 'secondary' or 'action'
+    type: 'button',
+       // --------------^ Only used for button element. Options: 'button', 'submit', or 'reset'
+    link: 'https://www.google.com',
+    label: 'Test label',
+    onClick: () => { console.log('Hello World')},
+    // --------------^ this will need to be the real button functionality
+    hasIcon: true,
+    icon: iconSvg,
+    iconPosition: 'right',
+    // --------------^ only applies to the <button> render. Options: 'left' or 'right'
+    disabled: false,
+    // --------------^ only applies to the <button> render.
+  }
+
+  const referenceCommonValues = (element) => {
+      element.className = 'button';
+      buttonData.hasIcon ? element.classList.add(`${buttonData.iconPosition === 'left' ? '-iconLeft' : '-iconRight'}`) : ''
+      element.classList.add(`-${buttonData.variant}`)
+      element.innerHTML = `<p class="button__text">${buttonData.label}</p>${buttonData.hasIcon ? buttonData.icon : ''}`
+    }
+
+  const renderButton = (isLink) => {
+    if(isLink){
+      const link = document.createElement('a')
+      referenceCommonValues(link)
+      link.classList.add('-link');
+      link.href = buttonData.link;
+      return link
+    }else{
+      const button = document.createElement('button')
+      referenceCommonValues(button)
+      button.onclick = buttonData.onClick;
+      button.type = buttonData.type
+      button.disabled = buttonData.disabled
+
+      return button;
+    }
+  }
+
+  document.body.appendChild(renderButton(isLink))
+
+</script>

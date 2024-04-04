@@ -1,0 +1,160 @@
+/* -------------  Common styles  ------------- */
+.button {
+  border-radius: 2px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  text-decoration: none;
+  display: flex;
+  width: fit-content;
+  gap: 10px;
+  border: none;
+  max-height: 42px;
+  transition: background-color 0.1s ease-in;
+
+  &:hover {
+    cursor: pointer;
+
+    svg {
+      transform: translateX(5px);
+    }
+  }
+
+  svg {
+    transform: none;
+    transition: all 0.2s ease-out;
+  }
+
+  .button__text {
+    margin: 0;
+  }
+
+  &.-iconLeft {
+    .button__text {
+      order: 1;
+    }
+
+    svg {
+      transform: none;
+    }
+  }
+
+  /* -------------  Variants  ------------- */
+  &.-primary {
+    background-color: #004b87;
+    color: #fff;
+
+    &:hover {
+      background-color: #001d34;
+    }
+
+    &:focus {
+      background-color: #001d34;
+      box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #001d34;
+      /* background-color: #004b87;
+      box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #004b87; */
+    }
+  }
+
+  &.-secondary {
+    background-color: #fff;
+    border: 2px solid #004b87;
+    color: #004b87;
+
+    svg path {
+      fill: #004b87;
+    }
+
+    &:hover {
+      color: #001d34;
+      border-color: #001d34;
+
+      svg path {
+        fill: #001d34;
+      }
+    }
+
+    &:focus {
+      color: #004b87;
+      box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #004b87;
+    }
+
+    &:disabled {
+      color: #757679;
+      border-color: #dadbdc;
+      background-color: #fff;
+
+      &:hover {
+        background-color: #fff;
+
+        svg path {
+          fill: #757679;
+        }
+      }
+    }
+  }
+
+  &.-action {
+    background-color: #e97722;
+    color: #111;
+
+    svg path {
+      fill: #111;
+    }
+
+    &:hover {
+      background-color: #ffb81c;
+    }
+
+    &:focus {
+      background-color: #e97722;
+      box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #e97722;
+      /* background-color: #ffb81c;
+      box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #ffb81c; */
+    }
+  }
+}
+
+/* -------------  Disabled  ------------- */
+.button:disabled {
+  background-color: #dadbdc;
+  cursor: not-allowed;
+  color: #757679;
+
+  svg path {
+    fill: #757679;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:hover {
+    background-color: #dadbdc;
+
+    svg {
+      transform: none;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    max-height: 44px;
+  }
+}
+
+/* Only for testing, can remove :)  */
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin-top: 100px;
+}
