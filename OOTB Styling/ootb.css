@@ -1,0 +1,66 @@
+/* ------------- general table styling -------------   */
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: transparent;
+}
+
+.table-striped > tbody > tr,
+.table > thead > tr > th {
+  font-family: "Open Sans";
+}
+
+.table > tbody > tr > td {
+  border: 1px solid #dadbdc;
+  padding: 12px;
+  font-size: 16px;
+  text-wrap: nowrap;
+
+  a {
+    color: #004b87;
+    font-family: "Open Sans";
+  }
+}
+
+.table > thead > tr > th,
+.table > thead:first-child > tr:first-child > th {
+  border-top: 1px solid #dadbdc;
+  border-left: 1px solid #dadbdc;
+  border-right: 1px solid #dadbdc;
+  border-bottom: none;
+  background-color: #f0f0f0;
+  padding: 12px;
+  font-size: 14px;
+  text-wrap: nowrap;
+
+  a {
+    color: #111;
+  }
+}
+
+.entitylist {
+  width: 90vw;
+}
+
+@media screen and (min-width: 768px) {
+  .entitylist {
+    width: auto;
+  }
+
+  .table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #fbfbfb;
+  }
+
+  .table > tbody > tr > td {
+    font-size: 18px;
+  }
+  .table > thead > tr > th,
+  .table > thead:first-child > tr:first-child > th {
+    font-size: 16px;
+  }
+
+  .table > thead > tr > th,
+  .table > thead:first-child > tr:first-child > th {
+    padding: 24px 12px;
+  }
+}
+
+/* ------------- End of general table styling -------------   */
