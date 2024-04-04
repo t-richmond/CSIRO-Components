@@ -56,8 +56,6 @@
     &:focus {
       background-color: #001d34;
       box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #001d34;
-      /* background-color: #004b87;
-      box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #004b87; */
     }
   }
 
@@ -80,8 +78,8 @@
     }
 
     &:focus {
-      color: #004b87;
-      box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #004b87;
+      color: #001d34;
+      box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #001d34;
     }
 
     &:disabled {
@@ -112,10 +110,8 @@
     }
 
     &:focus {
-      background-color: #e97722;
-      box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #e97722;
-      /* background-color: #ffb81c;
-      box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #ffb81c; */
+      background-color: #ffb81c;
+      box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #ffb81c;
     }
   }
 }
