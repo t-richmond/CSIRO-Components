@@ -103,3 +103,229 @@
 }
 
 /* ------------- End of general table styling -------------   */
+
+/* ------------- General form styling -------------   */
+
+.form-control {
+  border: 1px solid #757679 !important;
+  border-radius: 2px;
+
+  &:hover {
+    border-color: #8c8c8c !important;
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #004b87;
+  }
+}
+
+.form-control[readonly][disabled] {
+  border: none !important;
+  box-shadow: none;
+}
+
+.form-control.lookup {
+  min-height: 51px;
+}
+
+.form-control-cell .control .form-control {
+  border-radius: 2px;
+  padding: 12px;
+  min-height: 51px;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.field-label {
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin-bottom: 8px;
+}
+
+.input-group-btn .btn.btn-default {
+  height: 100%;
+  color: #004b87;
+  border-color: #004b87;
+}
+
+.input-group {
+  height: 100%;
+}
+
+.crmEntityFormView .cell .picklist label {
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin-top: 12px;
+}
+
+.crmEntityFormView .cell .picklist input[type="radio"] {
+  margin-top: 14px !important;
+  margin-right: 12px !important;
+  height: 24px;
+  width: 24px;
+}
+
+.picklist {
+  input {
+    &:hover {
+      cursor: pointer;
+      &:checked:after {
+        border-color: #001d34;
+        accent-color: #001d34;
+      }
+    }
+
+    &:focus {
+      &:checked:after {
+        border-color: #001d34;
+        accent-color: #001d34;
+        box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #001d34;
+      }
+    }
+
+    &:disabled {
+      border-color: #8c8c8c;
+      accent-color: #8c8c8c;
+    }
+  }
+
+  label {
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      text-decoration: none;
+      color: #8c8c8c;
+    }
+  }
+}
+
+input[type="radio"]:after {
+  width: 24px;
+  height: 24px;
+  border-radius: 15px;
+  top: 0px;
+  left: 0px;
+  position: relative;
+  background-color: #fff;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid #757679;
+}
+
+input[type="radio"]:checked:after {
+  width: 24px;
+  height: 24px;
+  border-radius: 15px;
+  top: 0px;
+  left: 0px;
+  position: relative;
+  background-color: white;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 7px solid #004b87;
+  accent-color: #004b87;
+}
+
+.input-group-btn {
+  height: 100%;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#AttachFileLabel {
+  padding: 12px 24px;
+  background-color: #004b87;
+  color: #fff;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  border-radius: 2px;
+  margin: 0;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #001d34;
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #001d34;
+  }
+}
+
+/* ------------- End of general form styling  -------------   */
+
+/* ------------- Profile page LHS  -------------   */
+
+.col-md-4 {
+  padding: 24px;
+  box-shadow: 0px 1px 2px 0px rgba(13, 14, 15, 0.08),
+    0px 4px 8px 0px rgba(13, 14, 15, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.weblinks-depth-1.weblinks.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.weblink.list-group-item {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 27px */
+  color: #004b87;
+  text-decoration: none;
+  padding: 0 0 12px 0;
+}
+
+.weblink.list-group-item:hover {
+  background-color: #fff;
+  color: #004b87;
+  text-decoration: underline;
+}
+
+.well.profile-info {
+  border: none;
+  box-shadow: none;
+}
+
+.well.profile-info img {
+  border-radius: 50%;
+}
+
+.userFullName {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 35px */
+  color: #111;
+}
+
+/* ------------- End of Profile page LHS  -------------   */
