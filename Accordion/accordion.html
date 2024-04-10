@@ -46,6 +46,7 @@ document.getElementsByClassName('accordion__heading')[0].innerHTML = accordionTi
       accordionItemData.map((item, index) => {
         const accordionBody = document.getElementsByClassName('accordionItem__body')[index]
         const accordionButton = document.getElementsByClassName('accordion__button')[index]
+        accordionBody.style.height = `${accordionBody.scrollHeight}px`
         accordionBody.classList.add('-active')
         accordionButton.innerHTML = openSvg
         if(!activeItems.includes(accordionItemData[index]))
@@ -58,6 +59,7 @@ document.getElementsByClassName('accordion__heading')[0].innerHTML = accordionTi
       accordionItemData.map((item, index) => {
         const accordionBody = document.getElementsByClassName('accordionItem__body')[index]
         const accordionButton = document.getElementsByClassName('accordion__button')[index]
+        accordionBody.style.height = '0px'
         accordionBody.classList.remove('-active')
         accordionButton.innerHTML = closedSvg
         activeItems.pop()
@@ -72,10 +74,12 @@ document.getElementsByClassName('accordion__heading')[0].innerHTML = accordionTi
     const expandButton = document.getElementsByClassName('expand__all')[0]
 
     if(accordionBody.classList.contains('-active')){
+      accordionBody.style.height = '0px'
       accordionBody.classList.remove('-active')
       accordionButton.innerHTML = closedSvg
       activeItems.pop()
     }else{
+      accordionBody.style.height = `${accordionBody.scrollHeight}px`
       accordionBody.classList.add('-active')
       accordionButton.innerHTML = openSvg
       activeItems.push(accordionItemData[index])
@@ -93,7 +97,7 @@ document.getElementsByClassName('accordion__heading')[0].innerHTML = accordionTi
   const accordionItemData = [
     {
       title: 'Terms and privacy',
-      body: dummyAccordionBody,
+      body: `${dummyAccordionBody}${dummyAccordionBody}${dummyAccordionBody}${dummyAccordionBody}`
     },
     {
       title: 'Applicant role',

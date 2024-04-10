@@ -1,20 +1,25 @@
 .accordionItem__body {
-  display: none;
+  overflow: hidden;
+  height: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  padding: 0 8px;
+
+  p {
+    margin: 0;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
 
   &.-active {
     display: flex;
     justify-content: space-between;
     padding: 0 8px 16px 8px;
     align-items: center;
-
-    p {
-      margin: 0;
-      font-family: "Open Sans";
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 150%;
-    }
   }
 }
 
@@ -131,6 +136,7 @@
   }
 
   .accordionItem__body {
+    padding: 0 16px;
     &.-active {
       font-size: 18px;
       padding: 0 16px 24px 16px;
