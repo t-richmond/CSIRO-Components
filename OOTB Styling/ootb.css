@@ -1,4 +1,62 @@
-/* ------------- general table styling -------------   */
+/* ------------- Profile page LHS  -------------   */
+
+.col-md-4 {
+  padding: 24px;
+  box-shadow: 0px 1px 2px 0px rgba(13, 14, 15, 0.08),
+    0px 4px 8px 0px rgba(13, 14, 15, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.weblinks-depth-1.weblinks.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.weblink.list-group-item {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 27px */
+  color: #004b87;
+  text-decoration: none;
+  padding: 0 0 12px 0;
+}
+
+.weblink.list-group-item:hover {
+  background-color: #fff;
+  color: #004b87;
+  text-decoration: underline;
+}
+
+.well.profile-info {
+  border: none;
+  box-shadow: none;
+}
+
+.well.profile-info img {
+  border-radius: 50%;
+}
+
+.userFullName {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 35px */
+  color: #111;
+}
+
+/* ------------- End of Profile page LHS  -------------   */
+
+/* ! Geneal table  */
+
 .table-striped > tbody > tr:nth-of-type(even) {
   background-color: transparent;
 }
@@ -63,8 +121,6 @@
   }
 }
 
-/* ------------- Mobile styling -------------   */
-
 @media screen and (max-width: 767px) {
   .table > tbody > tr > td {
     padding: 0;
@@ -79,6 +135,7 @@
     padding: 12px;
     display: flex;
     align-items: center;
+    border-top: 0;
 
     &:before {
       background-color: #f0f0f0;
@@ -88,8 +145,6 @@
       padding: 0 12px;
       text-wrap: wrap;
       min-height: 25px;
-      /* If the button import changes the layout height, change min height to a larger px val like below */
-      /* min-height: 51px; */
       display: flex;
       align-items: center;
     }
@@ -98,13 +153,17 @@
   .view-grid .table-fluid tbody {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 32px;
+  }
+
+  .table-fluid tr {
+    border-top: 1px solid #ddd !important;
   }
 }
 
-/* ------------- End of general table styling -------------   */
+/* ! End of table  */
 
-/* ------------- General form styling -------------   */
+/* ! Form */
 
 .form-control {
   border: 1px solid #757679 !important;
@@ -126,6 +185,10 @@
 
 .form-control.lookup {
   min-height: 51px;
+}
+
+.crmEntityFormView .cell.checkbox-cell:first-child {
+  padding: 0 28px 20px !important;
 }
 
 .form-control-cell .control .form-control {
@@ -152,6 +215,14 @@
   height: 100%;
   color: #004b87;
   border-color: #004b87;
+
+  &:focus {
+    box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #004b87;
+    border-radius: 2px !important;
+    z-index: 3;
+    outline: none;
+    background-color: #fff;
+  }
 }
 
 .input-group {
@@ -173,8 +244,15 @@
   height: 24px;
   width: 24px;
 }
+.crmEntityFormView .cell.boolean-radio-cell input[type="radio"] {
+  margin-top: -1px !important;
+  margin-right: 8px !important;
+  height: 24px;
+  width: 24px;
+}
 
-.picklist {
+.picklist,
+.boolean-radio {
   input {
     &:hover {
       cursor: pointer;
@@ -185,6 +263,15 @@
     }
 
     &:focus {
+      outline: 5px auto #004b87;
+
+      &:after {
+        top: 4px;
+        left: 4px;
+        width: 16px;
+        height: 16px;
+      }
+
       &:checked:after {
         border-color: #001d34;
         accent-color: #001d34;
@@ -271,61 +358,52 @@ input[type="file"] {
   }
 }
 
-/* ------------- End of general form styling  -------------   */
+input[type="checkbox"] {
+  height: 24px;
+  width: 24px;
+  accent-color: #004b87;
+  border-radius: 2px;
+  margin-top: 0;
 
-/* ------------- Profile page LHS  -------------   */
+  &:focus {
+    outline: 1px solid #8c8c8c;
+    box-shadow: 0px 0px 0px 1px #fff, 0px 0px 0px 3px #004b87;
+    clip-path: circle(84%);
+  }
 
-.col-md-4 {
-  padding: 24px;
-  box-shadow: 0px 1px 2px 0px rgba(13, 14, 15, 0.08),
-    0px 4px 8px 0px rgba(13, 14, 15, 0.12);
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  &:hover {
+    cursor: pointer;
+    accent-color: #001d34;
+
+    &:focus {
+      box-shadow: 0px 0px 0px 1px #fff, 0px 0px 0px 3px #001d34;
+    }
+  }
 }
 
-.weblinks-depth-1.weblinks.list-group {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+.crmEntityFormView .cell.checkbox-cell div.info {
+  padding-left: 32px !important;
 }
 
-.weblink.list-group-item {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  font-family: "Open Sans";
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 150%; /* 27px */
-  color: #004b87;
-  text-decoration: none;
-  padding: 0 0 12px 0;
-}
-
-.weblink.list-group-item:hover {
+.input-group-addon {
   background-color: #fff;
+  border: 1px solid #8c8c8c;
+  border-radius: 2px !important;
   color: #004b87;
-  text-decoration: underline;
-}
 
-.well.profile-info {
-  border: none;
-  box-shadow: none;
-}
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    outline: 1px solid transparent;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #004b87;
+    &:last-child {
+      border-left: none;
+    }
+  }
 
-.well.profile-info img {
-  border-radius: 50%;
+  &:hover {
+    background-color: #f2f2f2;
+  }
 }
-
-.userFullName {
-  font-family: Montserrat;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 125%; /* 35px */
-  color: #111;
-}
-
-/* ------------- End of Profile page LHS  -------------   */
