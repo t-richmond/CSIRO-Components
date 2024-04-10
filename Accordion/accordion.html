@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="accordion.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+<div class="container">
+  <div class="accordion__container">
+    <div class="accordion__controls">
+      <h2 class="accordion__heading"></h2>
+      <button class="expand__all" onclick="renderExpandAll()"></button>
+    </div>
+    <div class="accordion__list"></div>
+  </div>
+</div>
+
+</body>
+</html>
+
+<script>
+
+  let isExpandAll = false;
+  let activeIndex = -1;
+  const activeItems = []
+  const openSvg = `<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 12.5H6" stroke="#171717" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`
+  const closedSvg = `<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6.5V12.5M12 12.5V18.5M12 12.5H18M12 12.5L6 12.5" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`
+const dummyAccordionBody = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vulputate turpis felis, ac pellentesque sapien euismod in. Praesent enim libero."
+const accordionTitle = "STEM Together Future Shapers Application"
+document.getElementsByClassName('accordion__heading')[0].innerHTML = accordionTitle
+
+  const renderExpandAll = () => {
+    const expandButton = document.getElementsByClassName('expand__all')[0]
+
+    if(isExpandAll){
+      const icon = `<span class='expand__title'>Collapse all</span>${openSvg}`
+      expandButton.innerHTML = icon
+      isExpandAll = false
+      accordionItemData.map((item, index) => {
+        const accordionBody = document.getElementsByClassName('accordionItem__body')[index]
+        const accordionButton = document.getElementsByClassName('accordion__button')[index]
+        accordionBody.classList.add('-active')
+        accordionButton.innerHTML = openSvg
+        if(!activeItems.includes(accordionItemData[index]))
+        activeItems.push(accordionItemData[index])
+      })
+    }else{
+      const icon =  `<span class='expand__title'>Expand all</span>${closedSvg}`
+      expandButton.innerHTML = icon
+      isExpandAll = true;
+      accordionItemData.map((item, index) => {
+        const accordionBody = document.getElementsByClassName('accordionItem__body')[index]
+        const accordionButton = document.getElementsByClassName('accordion__button')[index]
+        accordionBody.classList.remove('-active')
+        accordionButton.innerHTML = closedSvg
+        activeItems.pop()
+      })
+    }
+  }
+
+  const renderAccordionItem = (index) => {
+
+
+
+    const accordionButton = document.getElementsByClassName('accordion__button')[index]
+    const accordionBody = document.getElementsByClassName('accordionItem__body')[index]
+    const expandAllText = document.getElementsByClassName('expand__title')[0]
+    const expandButton = document.getElementsByClassName('expand__all')[0]
+
+    if(accordionBody.classList.contains('-active')){
+      accordionBody.classList.remove('-active')
+      accordionButton.innerHTML = closedSvg
+      activeItems.pop()
+    }else{
+      accordionBody.classList.add('-active')
+      accordionButton.innerHTML = openSvg
+      activeItems.push(accordionItemData[index])
+    }
+
+    if(activeItems.length === accordionItemData.length){
+      isExpandAll = false
+      expandButton.innerHTML = `<span>Collapse all</span>${openSvg}`
+    }else if(activeItems.length === 0){
+      isExpandAll = true
+      expandButton.innerHTML = `<span>Expand all</span>${closedSvg}`
+    }
+  }
+
+  const accordionItemData = [
+    {
+      title: 'Terms and privacy',
+      body: dummyAccordionBody,
+    },
+    {
+      title: 'Applicant role',
+      body: dummyAccordionBody,
+    },
+    {
+      title: 'Applicant information',
+      body: dummyAccordionBody,
+    },
+    {
+      title: 'Student information',
+      body: dummyAccordionBody,
+    },
+    {
+      title: 'Program information',
+      body: dummyAccordionBody,
+    },
+    {
+      title: 'Required document/s',
+      body: dummyAccordionBody,
+    },
+    {
+      title: 'Required task/s',
+      body: dummyAccordionBody,
+    },
+  ]
+
+
+  accordionItemData.map((accordion, accordionIndex) => {
+    const accordionContainer = document.getElementsByClassName('accordion__list')[0]
+
+    const accordionItem = document.createElement('div');
+    const accordionTitle = document.createElement('div');
+    const accordionBody = document.createElement('div')
+
+    accordionItem.className = 'accordion__item';
+    accordionTitle.className = 'accordionItem__title';
+    accordionBody.className = 'accordionItem__body';
+
+    const accordionTitleInnerHtml = `<p>${accordion.title}</p><button class='accordion__button' onclick="renderAccordionItem(${accordionIndex})"><svg class='open' width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 6.5V12.5M12 12.5V18.5M12 12.5H18M12 12.5L6 12.5" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    </button>`
+    const accordionExpandedInnerHtml = `<p>${accordion.body}</p>`
+    accordionTitle.innerHTML = accordionTitleInnerHtml;
+    accordionBody.innerHTML = accordionExpandedInnerHtml;
+
+    accordionItem.appendChild(accordionTitle);
+    accordionItem.appendChild(accordionBody);
+    accordionContainer.appendChild(accordionItem)
+  })
+
+
+  renderExpandAll();
+
+</script>
