@@ -4,13 +4,13 @@
   &.-active {
     display: flex;
     justify-content: space-between;
-    padding: 0 16px 24px 16px;
+    padding: 0 8px 16px 8px;
     align-items: center;
 
     p {
       margin: 0;
       font-family: "Open Sans";
-      font-size: 18px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: 150%;
@@ -27,7 +27,7 @@
 .accordion__heading {
   margin: 0;
   font-family: "Montserrat";
-  font-size: 28px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: 125%;
@@ -37,19 +37,21 @@
 .accordion__controls {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  /* align-items: end; */
 }
 
 .accordionItem__title {
   display: flex;
   justify-content: space-between;
-  padding: 32px 16px;
+  padding: 24px 8px;
   align-items: center;
   position: relative;
 
   p {
     margin: 0;
     font-family: "Montserrat";
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 600;
     line-height: 125%;
@@ -90,6 +92,7 @@
   align-items: center;
   padding: 12px 20px;
   gap: 8px;
+  align-self: end;
 
   span {
     font-family: "Open Sans";
@@ -102,5 +105,35 @@
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .accordion__controls {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .expand__all {
+    align-self: auto;
+  }
+
+  .accordionItem__title {
+    padding: 32px 16px;
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .accordion__heading {
+    font-size: 28px;
+  }
+
+  .accordionItem__body {
+    &.-active {
+      font-size: 18px;
+      padding: 0 16px 24px 16px;
+    }
   }
 }
