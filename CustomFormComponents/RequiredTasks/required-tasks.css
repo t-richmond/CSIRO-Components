@@ -5,7 +5,7 @@
 
   h3 {
     font-family: "Montserrat";
-    font-size: 28px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: 125%;
@@ -15,7 +15,7 @@
 
   p {
     font-family: "Open Sans";
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
@@ -26,5 +26,17 @@
   span {
     color: #9c0f2e;
     margin-left: 4px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .required__tasks__container {
+    h3 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 18px;
+    }
   }
 }
