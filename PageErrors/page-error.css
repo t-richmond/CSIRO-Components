@@ -1,0 +1,47 @@
+.pageNotFound {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  h2 {
+    color: #004b87;
+    font-family: "Montserrat";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    margin: 0;
+  }
+
+  p {
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pageNotFound {
+    width: 60%;
+
+    h2 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    button {
+      width: fit-content;
+    }
+  }
+}

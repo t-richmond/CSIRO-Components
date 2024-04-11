@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="page-error.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+
+<div class="container">
+  <div class="pageNotFound">
+    <h2>Something went wrong...</h2>
+    <p class="notFound__description"></p>
+    <button>Insert general button here</button>
+  </div>
+</div>
+
+</body>
+</html>
+
+<script>
+
+  const errorCode = 500;
+  const paragraphElement = document.getElementsByClassName('notFound__description')[0]
+
+  if(errorCode === 404){
+    paragraphElement.innerHTML = "We can't find what you are looking for, try going back to the previous page."
+  }else{
+    paragraphElement.innerHTML = "Apologies, we're experiencing technical difficulties. Our team is working to fix this. Please try again later."
+  }
+
+</script>
+
+
