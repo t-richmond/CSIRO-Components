@@ -144,6 +144,7 @@
       margin-right: 12px;
       padding: 0 12px;
       text-wrap: wrap;
+      /* if element is too large, increase min height of LHS label */
       min-height: 25px;
       display: flex;
       align-items: center;
@@ -378,6 +379,12 @@ input[type="checkbox"] {
     &:focus {
       box-shadow: 0px 0px 0px 1px #fff, 0px 0px 0px 3px #001d34;
     }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    border: 1px solid #dadbdc;
+    background-color: #fff;
   }
 }
 
