@@ -1,0 +1,76 @@
+.required__documents__container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.required__documents__header {
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  color: #004b87;
+  margin: 0;
+}
+
+.student__container,
+.stem__container {
+  .list__heading {
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    margin: 0;
+  }
+
+  ul {
+    padding-left: 28px;
+
+    .list__item {
+      margin: 0;
+      font-family: "Open Sans";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    .list__item__link {
+      font-family: "Open Sans";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      color: #004b87;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.required__list {
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .required__documents__header {
+    font-size: 28px;
+  }
+
+  .student__container,
+  .stem__container {
+    font-size: 18px;
+
+    ul {
+      .list__item,
+      .list__item__link {
+        font-size: 18px;
+      }
+    }
+  }
+}
