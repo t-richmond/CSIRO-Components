@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="stepper.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+  <div class="container">
+    <ol class="progress list-group right">
+      <li class="list-group-item complete"><span class="number">1</span>Step 1</li>
+      <li class="list-group-item complete"><span class="number">2</span>step 2</li>
+      <li class="list-group-item complete"><span class="number">2</span>step 2</li>
+      <li class="list-group-item active"><span class="number">3</span>Step 3</li>
+      <li class="list-group-item incomplete"><span class="number">2</span>step 2</li>
+      <li class="list-group-item incomplete"><span class="number">3</span>Step 3</li>
+    </ol>
+  </div>
+</body>
+</html>
+
+<script>
+
+    const parentContainer = document.getElementsByClassName('container')[0]
+    const listElement = document.getElementsByClassName('list-group')[0]
+    const listItems = listElement.getElementsByTagName('li')
+    const mobileDisplay = listElement.cloneNode(true)
+    const mobileItems = mobileDisplay.getElementsByTagName('li')
+    mobileDisplay.classList.add('mobileList')
+    listElement.classList.add('desktopList')
+
+    const generateDesktopDisplay = (listArray) => {
+      for(let i =0; i< listArray.length; i++){
+       const currentListItem = listArray[i]
+       if(currentListItem.classList.contains('complete')){
+        const img = document.createElement('img')
+        img.src = './complete.svg'
+        currentListItem.prepend(img)
+       }else if(currentListItem.classList.contains('active')){
+        const img = document.createElement('img')
+        img.src = './active.svg'
+        currentListItem.prepend(img)
+       }else{
+        const img = document.createElement('img')
+        img.src = './incomplete.svg'
+        currentListItem.prepend(img)
+       }
+    }
+    }
+
+    const generateMobileDisplay = (listArray) => {
+      for(let i =0; i< listArray.length; i++){
+       const currentListItem = listArray[i]
+       if(currentListItem.classList.contains('complete')){
+        const img = document.createElement('img')
+        img.src = './complete.svg'
+        currentListItem.innerHTML = ''
+        currentListItem.appendChild(img)
+       }else if(currentListItem.classList.contains('active')){
+        const img = document.createElement('img')
+        img.src = './active.svg'
+        currentListItem.innerHTML = ''
+        currentListItem.appendChild(img)
+       }else{
+        const img = document.createElement('img')
+        img.src = './incomplete.svg'
+        currentListItem.innerHTML = ''
+        currentListItem.appendChild(img)
+       }
+    }
+    }
+
+    generateDesktopDisplay(listItems)
+    generateMobileDisplay(mobileItems)
+    parentContainer.appendChild(mobileDisplay)
+
+
+</script>
