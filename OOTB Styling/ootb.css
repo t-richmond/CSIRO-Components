@@ -55,7 +55,7 @@
 
 /* ------------- End of Profile page LHS  -------------   */
 
-/* ! Geneal table  */
+/* ------------- General table  -------------   */
 
 .table-striped > tbody > tr:nth-of-type(even) {
   background-color: transparent;
@@ -161,9 +161,9 @@
   }
 }
 
-/* ! End of table  */
+/* ------------- End of General table  -------------   */
 
-/* ! Form */
+/* ------------- Form elements  -------------   */
 
 .form-control {
   border: 1px solid #757679 !important;
@@ -407,3 +407,5 @@ input[type="checkbox"] {
     background-color: #f2f2f2;
   }
 }
+
+/* ------------- End of form elements  -------------   */
