@@ -7,6 +7,7 @@
 </head>
 <body>
   <div class="container">
+    <h4 class="stepper__heading">Steps</h4>
     <ol class="progress list-group right">
       <li class="list-group-item complete"><span class="number">1</span>Step 1</li>
       <li class="list-group-item complete"><span class="number">2</span>step 2</li>
@@ -31,21 +32,21 @@
 
     const generateDesktopDisplay = (listArray) => {
       for(let i =0; i< listArray.length; i++){
-       const currentListItem = listArray[i]
-       if(currentListItem.classList.contains('complete')){
-        const img = document.createElement('img')
-        img.src = './complete.svg'
-        currentListItem.prepend(img)
-       }else if(currentListItem.classList.contains('active')){
-        const img = document.createElement('img')
-        img.src = './active.svg'
-        currentListItem.prepend(img)
-       }else{
-        const img = document.createElement('img')
-        img.src = './incomplete.svg'
-        currentListItem.prepend(img)
-       }
-    }
+        const currentListItem = listArray[i]
+        if(currentListItem.classList.contains('complete')){
+          const img = document.createElement('img')
+          img.src = './complete.svg'
+          currentListItem.prepend(img)
+        }else if(currentListItem.classList.contains('active')){
+          const img = document.createElement('img')
+          img.src = './active.svg'
+          currentListItem.prepend(img)
+        }else{
+          const img = document.createElement('img')
+          img.src = './incomplete.svg'
+          currentListItem.prepend(img)
+        }
+      }
     }
 
     const generateMobileDisplay = (listArray) => {

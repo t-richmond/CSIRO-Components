@@ -36,10 +36,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0;
 
   &.mobileList {
     display: flex;
-    padding: 0;
+    /* padding: 0;s */
     img {
       margin-right: 0;
     }
@@ -52,6 +53,17 @@
 
 .number {
   display: none;
+}
+
+.stepper__heading {
+  display: none;
+  color: #004b87;
+  font-family: "Montserrat";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  margin: 0 0 24px 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -69,6 +81,10 @@
   }
 
   .number {
+    display: flex;
+  }
+
+  .stepper__heading {
     display: flex;
   }
 }
